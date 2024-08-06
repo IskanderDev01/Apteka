@@ -1,13 +1,9 @@
 import { Button } from 'shared/ui/AntD';
-import IconLecarstvo from '../../../../shared/assets/free-icon-medicine-8334231.png';
+import IconLekarstvo from '../../../../shared/assets/free-icon-medicine-8334231.png';
 import IconListok from '../../../../shared/assets/listok.png';
 import { useTranslation } from 'react-i18next';
 
-export const Banner = ({
-    onScrollToPartners,
-}: {
-    onScrollToPartners: () => void;
-}) => {
+const Banner = ({ onScrollToPartners }: { onScrollToPartners: () => void }) => {
     const { t } = useTranslation();
     const filterStyle = {
         filter: 'invert(35%) sepia(100%) saturate(1000%) hue-rotate(90deg) brightness(100%) contrast(100%)',
@@ -44,10 +40,11 @@ export const Banner = ({
             </div>
             <div className="w-full md:w-1/4 flex justify-center md:justify-start py-4 md:py-0">
                 <img
-                    src={IconLecarstvo}
+                    src={IconLekarstvo}
                     className="w-2/3 md:w-full max-w-xs md:max-w-sm lg:max-w-md"
                 />
             </div>
         </div>
     );
 };
+export default Banner;

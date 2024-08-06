@@ -1,9 +1,5 @@
+import { AboutCompanyBanner, Banner, Filials, FounderCompanyBanner, PartnersBanner } from 'pages/MainPage'
 import { useRef } from 'react';
-import { AboutCompanyBanner } from '../AboutCompanyBanner';
-import { Banner } from '../Banner';
-import { Filials } from '../FIlials';
-import { FounderCompanyBanner } from '../FounderCompanyBanner';
-import { PartnersBanner } from '../PartnersBanner';
 
 const MainPage = () => {
     const partnersRef = useRef<HTMLDivElement | null>(null);

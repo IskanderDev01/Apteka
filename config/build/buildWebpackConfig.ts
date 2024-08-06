@@ -39,24 +39,10 @@ export function buildWebpackConfig(
                 new CssMinimizerPlugin(),
             ],
             splitChunks: {
-                // chunks: 'all',
-                // maxInitialRequests: Infinity,
-                // minSize: 0,
-                // cacheGroups: {
-                //     vendor: {
-                //         test: /[\\/]node_modules[\\/]/,
-                //         name(module: any) {
-                //             const packageName = module.context.match(
-                //                 /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
-                //             )[1];
-                //             return `npm.${packageName.replace('@', '')}`;
-                //         },
-                //     },
-                // },
-                chunks: 'all', // Разделяет все чанки
-                minSize: 20000, // Минимальный размер нового чанка (в байтах)
-                maxSize: 70000, // Максимальный размер чанка (в байтах)
-                minChunks: 1, // Минимальное количество чанков, которые должны использовать модуль перед разделением
+                chunks: 'all',
+                minSize: 20000,
+                maxSize: 70000,
+                minChunks: 1,
                 automaticNameDelimiter: '-',
                 cacheGroups: {
                     defaultVendors: {

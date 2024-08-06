@@ -1,8 +1,7 @@
-import { Button } from 'shared/ui/AntD';
-import IconDoctor from '../../../../shared/assets/doctor.png';
 import { FormApplication } from 'features';
+import IconDoctor from '../../../../shared/assets/doctor.png'
 
-export const PartnersBanner = () => {
+const PartnersBanner = () => {
     return (
         <div className="bg-red-200 mt-16 py-16">
             <div className="container mx-auto max-w-screen-xl flex flex-col lg:flex-row px-4">
@@ -20,3 +19,5 @@ export const PartnersBanner = () => {
         </div>
     );
 };
+
+export default PartnersBanner;

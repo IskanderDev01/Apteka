@@ -1,15 +1,12 @@
-import Apteka from '../../../../shared/assets/ajiniazAptek.jpg';
-import 'slick-carousel/slick/slick.scss';
-import 'slick-carousel/slick/slick-theme.scss';
 import Slider from 'react-slick';
-import './style.scss'
-
+import Apteka from '../../../../shared/assets/ajiniazAptek.jpg'
+import('slick-carousel/slick/slick.scss');
+import('slick-carousel/slick/slick-theme.scss');
 interface SlideProps {
-    image: string;
+    image: string | undefined;
     address: string;
     phone: string;
 }
-
 const slides: SlideProps[] = [
     {
         image: Apteka,
@@ -87,8 +84,8 @@ const slides: SlideProps[] = [
         phone: 'Телефон номер: +998913728397 ',
     },
 ];
+const Filials = () => {
 
-export const Filials = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -127,28 +124,33 @@ export const Filials = () => {
                 Наши филиалы
             </div>
             <div className="relative py-5">
-                <Slider {...settings} arrows={false} className="relative">
-                    {slides.map((item, index) => (
-                        <div key={index} className="px-2 pb-10">
-                            <div className="relative overflow-hidden">
-                                <img
-                                    src={item.image}
-                                    alt={`Филиал ${index + 1}`}
-                                    className="w-full h-auto object-cover"
-                                />
-                                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
-                                    <div className="text-xl font-medium">
-                                        {item.address}
-                                    </div>
-                                    <div className="text-gray-200">
-                                        {item.phone}
+                
+                    <Slider {...settings} arrows={false} className="relative">
+                        {slides.map((item, index) => (
+                            <div key={index} className="px-2 pb-10">
+                                <div className="relative overflow-hidden">
+                                    {Apteka && (
+                                        <img
+                                            src={item?.image}
+                                            alt={`Филиал ${index + 1}`}
+                                            className="w-full h-auto object-cover"
+                                        />
+                                    )}
+                                    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-4">
+                                        <div className="text-xl font-medium">
+                                            {item.address}
+                                        </div>
+                                        <div className="text-gray-200">
+                                            {item.phone}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </Slider>
+                        ))}
+                    </Slider>
             </div>
         </div>
     );
 };
+
+export default Filials;

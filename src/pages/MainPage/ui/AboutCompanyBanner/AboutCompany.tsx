@@ -1,8 +1,8 @@
 import { Button } from 'shared/ui/AntD';
 import { useTranslation } from 'react-i18next';
-import AptekaJpg from '../../../../shared/assets/ajiniazAptek.jpg';
+import aptekaJpg from '../../../../shared/assets/ajiniazAptek.jpg';
 
-export const AboutCompanyBanner = ({
+const AboutCompanyBanner = ({
     onScrollToPartners,
 }: {
     onScrollToPartners: () => void;
@@ -33,7 +33,7 @@ export const AboutCompanyBanner = ({
             </div>
             <div className="flex-1 flex justify-center lg:justify-end">
                 <img
-                    src={AptekaJpg}
+                    src={aptekaJpg}
                     alt="Аптека"
                     className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg object-cover"
                 />
@@ -41,3 +41,4 @@ export const AboutCompanyBanner = ({
         </div>
     );
 };
+export default AboutCompanyBanner;
